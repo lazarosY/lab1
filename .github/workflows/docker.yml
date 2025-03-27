@@ -17,20 +17,16 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-    - name: Change directory to Rest
-      run: cd Rest  
-    - name: Build JAR with Maven
-      run: mvn clean package
+    - name: Build JAR with Maven in Rest directory
+      run: mvn clean package -f Rest/pom.xml 
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
-
     - name: Log in to Docker Hub
       uses: docker/login-action@v2
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-
     - name: Build and push Docker image
       run: |
-        docker build -t lazarusyiann/dockerfile .
+        docker build -t lazarusyiann/dockerfile Rest
         docker push lazarusyiann/dockerfile:latest
