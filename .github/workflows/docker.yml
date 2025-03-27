@@ -17,7 +17,8 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-
+    - name: Change directory to Rest
+      run: cd Rest  
     - name: Build JAR with Maven
       run: mvn clean package
     - name: Set up Docker Buildx

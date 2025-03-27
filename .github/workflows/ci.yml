@@ -24,7 +24,8 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-
+      - name: Change directory to Rest
+        run: cd Rest  
       - name: Cache Maven dependencies
         uses: actions/cache@v3
         with:
