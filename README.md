@@ -10,17 +10,17 @@ In order to compile the project into a jar file : simply, in the “station/net/Re
 
 In the directory where the jar file has been saved execute it in the commandline by typing : java -jar Rest-0.0.1-SNAPSHOT.jar.(it will run on 8080 local host)
 
-#For testing functionality
+# For testing functionality
 
 Following that, in order to create rest api requests to the crud I utilized postman in order to execute the needed requests, namely :
 	
-##Get http://localhost:8080/resources , in order to view the resource 	table
+## Get http://localhost:8080/resources , in order to view the resource 	table
 
-##Put http://localhost:8080/resources/update/id in order to update the values of a specific resource
+## Put http://localhost:8080/resources/update/id in order to update the values of a specific resource
 
-##Post http://localhost:8080/resources/resources/save and a properly built raw text in json format contained in the body in order to save a resource 
+## Post http://localhost:8080/resources/resources/save and a properly built raw text in json format contained in the body in order to save a resource 
 
-##Delete http://localhost:8080/resources/delete/id in order to delete a resource
+## Delete http://localhost:8080/resources/delete/id in order to delete a resource
 
 
    
