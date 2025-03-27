@@ -23,9 +23,8 @@ jobs:
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
-          java-version: '17
-      - name: Change directory to Rest
-        run: cd Rest
+          java-version: '17'
+
       - name: Cache Maven dependencies
         uses: actions/cache@v3
         with:
@@ -44,11 +43,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up JDK 21
+      - name: Set up JDK 17 (or choose JDK 21 if necessary)
         uses: actions/setup-java@v3
         with:
           distribution: 'temurin'
-          java-version: '21'
+          java-version: '17'  # Use the version you require
 
       - name: Cache Maven dependencies
         uses: actions/cache@v3
@@ -58,4 +57,4 @@ jobs:
           restore-keys: maven-
 
       - name: Run Tests with JUnit
-        run: mvn test
+        run: cd Rest && mvn test
